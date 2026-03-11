@@ -10,16 +10,19 @@ while to_continue :
     print("         Sales Record")
     print("-"*30)
 
-    Product=input("\n Enter the product name: ")
-    try:
-       price=float(input("\n Enter the price per unit: "))
-       sales=int(input("\n How many units?: "))
+    record_sales(sales_register)
 
-       record_sales(sales_register, Product, price, sales)
-       option = input("\n Do you want to continue with the registration? Y for yes or N for no: ")
-       if (option=="N"):  to_continue=False
-    except ValueError:
-        print("\n Invalid input. Please  enter a number")
+    validate = True
+    while validate:
+        try:
+            option = input("\n Do you want to continue with the registration? Y for yes or N for no: ").upper()
+            if option not in ["Y", "N"]:
+                raise ValueError("Invalid option")
+            validate=False
+        except ValueError :
+         print("\n Please enter Y or N")
+
+    if (option=="N"):  to_continue=False
     
 summary=total_calculations(sales_register)
 daily_summary(summary)
