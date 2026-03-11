@@ -1,22 +1,22 @@
-from Servicios import registrar_ventas, resumen_diario, calculos_totales
+from services import  record_sales, daily_summary, total_calculations
 
-registro_ventas = []
-resumen=[]
-seguir = True
+sales_register = []
+summary=[]
+to_continue = True
 
-while seguir != False :
+while to_continue != False :
 
     print("\n","-"*30)
-    print("      Registro de Ventas")
+    print("         Sales Record")
     print("-"*30)
 
-    Producto=input("\n Ingresar el nombre del Producto: ")
-    precio=float(input("\n Ingresar el precio de la unidad: "))
-    ventas=int(input(f"\n ¿Cuantas unidades de {Producto}?: "))
+    Product=input("\n Enter the product name: ")
+    price=float(input("\n Enter the price per unit: "))
+    sales=int(input("\n How many units?: "))
 
-    registrar_ventas(registro_ventas, Producto, precio, ventas)
-    opcion = input("\n Desea continuar registrando ventas, S para si o N para no: ")
-    if (opcion=="N"):  seguir=False
+    record_sales(sales_register, Product, price, sales)
+    option = input("\n Do you want to continue with the registration? Y for yes or N for no: ")
+    if (option=="N"):  to_continue=False
     
-resumen=calculos_totales(registro_ventas)
-resumen_diario(resumen)
+summary=total_calculations(sales_register)
+daily_summary(summary)

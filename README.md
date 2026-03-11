@@ -18,7 +18,7 @@ Simplify the process of recording sales and provide a clear summmary about the d
 ## How the Program Works 
 
 1. The progrm receives product information (name, price, quantity)
-2. The product information is stores in a dictionaries and list 
+2. The product information is stored in a dictionaries and list 
 3. The program calculate all sales about each product stored 
 4. It generates a summary of daily sales 
 
