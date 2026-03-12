@@ -14,13 +14,12 @@ while to_continue :
 
     validate = True
     while validate:
-        try:
+            
             option = input("\n Do you want to continue with the registration? Y for yes or N for no: ").upper()
-            if option not in ["Y", "N"]:
-                raise ValueError("Invalid option")
-            validate=False
-        except ValueError :
-         print("\n Please enter Y or N")
+            if option in ["Y", "N"]:
+               validate=False
+            else:
+             print("\n Please enter Y or N")
 
     if (option=="N"):  to_continue=False
     

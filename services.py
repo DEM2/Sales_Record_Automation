@@ -1,24 +1,19 @@
 from collections import defaultdict
-
+from validations import get_non_empty_text,get_positive_number
 
 def  record_sales (record):
-    validate = True
-    Product=input("\n Enter the product name: ").strip()
-    while validate:
-        try:
-           
-            price=float(input("\n Enter the price per unit: "))
-            quantity=int(input("\n How many units?: "))
 
-            record.append({
-                'Product': Product,
-                'Price_per_unit': price,
-                'Amount': quantity
-            })
-            print("\n Registros Exitoso ✅")
-            validate=False 
-        except ValueError:
-            print("Price or Quantity are invalid")
+    product = get_non_empty_text("\n Enter the product name: ")
+    price = get_positive_number ("\n Enter the price per unit: ")
+    quantity= get_positive_number("\n How many units?: ")
+                
+    record.append({
+        'Product': product,
+        'Price_per_unit': price,
+        'Amount': quantity
+        })
+            
+    print("\n Sale recorded successfully ✅")
 
 
 def total_calculations(record):

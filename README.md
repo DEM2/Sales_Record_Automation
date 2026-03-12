@@ -14,6 +14,7 @@ Simplify the process of recording sales and provide a clear summmary about the d
 ## Program Structure 
  - main.py -> control the program flow 
  - services.py -> contains all functions for the correct sales register 
+ - validations.py -> contains all validations for each input
 
 ## How the Program Works 
 
@@ -27,3 +28,6 @@ Simplify the process of recording sales and provide a clear summmary about the d
 ```bash 
 python main.py 
 ```
+
+![Flow diagram](images/Automation_of_a_store's_daily_sales_records.png) 
+
